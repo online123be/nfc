@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HAPPP</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <style>
+            html, body{
+                padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+            }
+        </style>
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        
+        <script type="text/javascript" charset="utf-8">
+            
+            // Wait for device API libraries to load
+            //
+            document.addEventListener("deviceready", onDeviceReady, false);
+            
+            // device APIs are available
+            //
+            function onDeviceReady() {
+                var ref = window.open('http://dev.online123.be/keanshop/', '_blank', 'location=no,toolbar=no');
+                // ref.addEventListener( "loadstart", function(event) {
+                //     if(event.url == 'https://app.versu.be/open/scanner'){
+                //         window.open('http://apache.org', '_blank', 'location=no,toolbar=yes,closebuttoncaption=Sluiten');
+                //     }
+                //  });
+                ref.addEventListener('loadstop', function(event) {});
+                ref.addEventListener('loaderror', function(event) {});
+                ref.addEventListener('exit', function(event) {});
+                var notificationOpenedCallback = function(jsonData) {
+                    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+                };
+            }
+        
+            </script>
+    </head>
+    <body>
+    </body>
+</html>
